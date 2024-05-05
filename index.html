@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Клавиатурный тренажёр</title>
+
+	<link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+
+
+</head>
+<body>
+    <div class="head">
+		<div class="logo2">
+			<a href="index.html"><img src="logo.png" alt="" align="center"> Клавиатурный тренажер</a>
+			<img src="info.png" alt="" width="27" height="27" align="center" id="iconInfo"><button id="btnInfo"><a href="info.html">Информация</a></button>
+			<img src="faq.png" alt="" width="27" height="27" align="center" id="iconFaq"><button id="btnFaq"><a href="faq.html">FAQ</a></button>
+		</div>
+		
+	</div>
+
+    <div class="container" id="info">
+
+    <div class="results">
+        <div class="results-title">Результаты набора текста: </div>
+        <div class="indicators">
+            <div class="indicator">
+                <div class="indicator__icon">
+                    <i class='fas fa-tachometer-alt'></i>
+                </div>
+                <div class="indicator__name">Символов в минуту:</div>
+                <div class="indicator__value" id="wordsSpeed">—</div>
+            </div>
+            <div class="indicator">
+                <div class="indicator__icon__errors">
+                    <i class="fas fa-exclamation-circle"></i>
+                </div>
+                <div class="indicator__name">Ошибок:</div>
+                <div class="indicator__value" id="errors">—</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="strip"></div>
+
+<div class="mainMenu">
+	<button id="changeText" onclick="changeText()">Сменить текст</button>
+	<button id="changeColor" onclick="changeColor()">Сменить цвет</button>
+	<button id="changeKeyb" onclick="changeKeyb()">Убрать клавиатуру</button>
+</div>
+
+    <div class="container">
+
+        <form action="">
+            <input type="text" class="input" id="input" placeholder="Начинайте вводить текст">
+        </form>
+
+        <div class="text" id="textExample">
+			b
+        </div>
+
+        <div class="keyboard">
+
+            <div class="line">
+                <div id="green" data-key="ё">Ё</div>
+				<div id="green" data-key='1'>1</div>
+				<div id="yellow" data-key='2'>2</div>
+				<div id="red" data-key='3'>3</div>
+				<div id="blue" data-key='4'>4</div>
+				<div id="blue" data-key='5'>5</div>
+				<div id="purple" data-key='6'>6</div>
+				<div id="purple" data-key='7'>7</div>
+				<div id="red" data-key='8'>8</div>
+				<div id="yellow" data-key='9'>9</div>
+				<div id="green" data-key='0'>0</div>
+				<div id="green" data-key="-">-</div>
+				<div id="green" data-key="+">+</div>
+				<div id="green" data-key="backspace" class="backspace">Backspace</div>
+            </div>
+
+            <div class="line">
+                <div id="green" data-key="tab" class="tab">Tab</div>
+				<div id="green" data-key="й">Й</div>
+				<div id="yellow" data-key="ц">Ц</div>
+				<div id="red" data-key="у">У</div>
+				<div id="blue" data-key="к">К</div>
+				<div id="blue" data-key="е">Е</div>
+				<div id="purple" data-key="н">Н</div>
+				<div id="purple" data-key="г">Г</div>
+				<div id="red" data-key="ш">Ш</div>
+				<div id="yellow" data-key="щ">Щ</div>
+				<div id="green" data-key="з">З</div>
+				<div id="green" data-key="х">Х</div>
+				<div id="green" data-key="ъ">Ъ</div>
+				<div id="green" data-key="\">\</div>
+            </div>
+
+            <div class="line">
+                <div id="green" data-key="capslock" class="caps">Caps Lock</div>
+				<div id="green" data-key="ф">Ф</div>
+				<div id="yellow" data-key="ы">Ы</div>
+				<div id="red" data-key="в">В</div>
+				<div id="blue" data-key="а">А</div>
+				<div id="blue" data-key="п">П</div>
+				<div id="purple" data-key="р">Р</div>
+				<div id="purple" data-key="о">О</div>
+				<div id="red" data-key="л">Л</div>
+				<div id="yellow" data-key="д">Д</div>
+				<div id="green" data-key="ж">Ж</div>
+				<div id="green" data-key="э">Э</div>
+				<div id="green" data-key="Enter" class="enter">Enter</div>
+            </div>
+
+            <div class="line">
+                <div id="green" data-key="shift" class="shift">Shift</div>
+				<div id="green" data-key="я">Я</div>
+				<div id="yellow" data-key="ч">Ч</div>
+				<div id="red" data-key="с">С</div>
+				<div id="blue" data-key="м">М</div>
+				<div id="blue" data-key="и">И</div>
+				<div id="purple" data-key="т">Т</div>
+				<div id="purple" data-key="ь">Ь</div>
+				<div id="red" data-key="б">Б</div>
+				<div id="yellow" data-key="ю">Ю</div>
+				<div id="green" data-key=".">. <sup data-key=",">,</sup></div>
+				<div id="green" data-key="shift" class="shift">Shift</div>
+            </div>
+
+            <div class="line">
+                <div  data-key=" " class="space"></div>
+				<div id="green" data-key="alt" class="alt">Alt</div>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="strip"></div>
+
+    <script src="main.js" ></script>
+
+
+</body>
+</html>
